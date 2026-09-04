@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include "functions.h"
 
-bool SA::swap_intra_fi(Solution* sol)
+bool VNS::swap_intra_fi(Solution* sol)
 {
 	//cout << "SwapIntra" << endl;
 	for (int r_index = 0; r_index < data.numTruck; r_index++)
@@ -82,7 +82,7 @@ bool SA::swap_intra_fi(Solution* sol)
 	return false;
 }
 
-bool SA::swap_inter_fi(Solution* sol)
+bool VNS::swap_inter_fi(Solution* sol)
 {
 	//cout << "SwapInter" << endl;
 	for (int r1_index = 0; r1_index < data.numTruck; r1_index++)
@@ -213,7 +213,7 @@ bool SA::swap_inter_fi(Solution* sol)
 	return false;
 }
 
-bool SA::relocate_intra_fi(Solution* sol)
+bool VNS::relocate_intra_fi(Solution* sol)
 {
 	//cout << "RelocateIntra" << endl;
 	for (int r_index = 0; r_index < data.numTruck; r_index++)
@@ -288,7 +288,7 @@ bool SA::relocate_intra_fi(Solution* sol)
 	return false;
 }
 
-bool SA::relocate_inter_fi(Solution* sol)
+bool VNS::relocate_inter_fi(Solution* sol)
 {
 	//cout << "RelocateInter" << endl;
 
@@ -463,7 +463,7 @@ bool SA::relocate_inter_fi(Solution* sol)
 	return false;
 }
 
-bool SA::remove_fi(Solution* sol)
+bool VNS::remove_fi(Solution* sol)
 {
 	//cout << "Remove_fi" << endl;
 
@@ -554,7 +554,7 @@ bool SA::remove_fi(Solution* sol)
 	return false;
 }
 
-bool SA::insert_fi(Solution* sol)
+bool VNS::insert_fi(Solution* sol)
 {
 	//cout << "Insert_fi!!!" << endl;
 	vector<vector<double>> potential_list = {};
@@ -626,7 +626,7 @@ bool SA::insert_fi(Solution* sol)
 	return false;
 }
 
-bool SA::swap_intra_random(Solution* sol)
+bool VNS:swap_intra_random(Solution* sol)
 {
 	//cout << "Swap_Intra_random" << endl;
 
@@ -718,7 +718,7 @@ bool SA::swap_intra_random(Solution* sol)
 	return false;
 }
 
-bool SA::swap_intra_random2(Solution* sol)
+bool VNS::swap_intra_random2(Solution* sol)
 {
 	// berapa kali swap dicoba dalam sekali panggil
 	const int max_swaps = 3;        // boleh kamu tune
@@ -811,7 +811,7 @@ bool SA::swap_intra_random2(Solution* sol)
 	return any_changed;
 }
 
-bool SA::relocate_intra_random(Solution* sol)
+bool VNS::relocate_intra_random(Solution* sol)
 {
 	//cout << "Relocate_Intra_random" << endl;
 
@@ -891,7 +891,7 @@ bool SA::relocate_intra_random(Solution* sol)
 	return false;
 }
 
-bool SA::relocate_intra_random2(Solution* sol)
+bool VNS::relocate_intra_random2(Solution* sol)
 {
 	//cout << "Relocate_Intra_random" << endl;
 	relocate_intra_random(sol);
@@ -983,7 +983,7 @@ bool SA::relocate_intra_random2(Solution* sol)
 	
 }
 
-bool SA::swap_inter_random(Solution* sol)
+bool VNS::swap_inter_random(Solution* sol)
 {
 	//std::cout << "use random swap" << std::endl;
 
@@ -1101,7 +1101,7 @@ bool SA::swap_inter_random(Solution* sol)
 	return false;
 }
 
-bool SA::swap_inter_random2(Solution* sol)
+bool VNS::swap_inter_random2(Solution* sol)
 {
 	const int max_swaps = 3;            // boleh kamu tune
 	const int max_trials_per_swap = 20; // inter-route biasanya butuh trial lebih banyak
@@ -1212,7 +1212,7 @@ bool SA::swap_inter_random2(Solution* sol)
 	return any_changed;
 }
 
-bool SA::relocate_inter_random(Solution* sol)
+bool VNS::relocate_inter_random(Solution* sol)
 {
 	//cout << "Relocate_Inter_random" << endl;
 
@@ -1336,7 +1336,7 @@ bool SA::relocate_inter_random(Solution* sol)
 	return false;
 }
 
-bool SA::relocate_inter_random2(Solution* sol)
+bool VNS::relocate_inter_random2(Solution* sol)
 {
 	//cout << "Relocate_Inter_random" << endl;
 	relocate_inter_random(sol);
@@ -1472,7 +1472,7 @@ bool SA::relocate_inter_random2(Solution* sol)
 	
 }
 
-bool SA::remove_random(Solution* sol)
+bool VNS::remove_random(Solution* sol)
 {
 	// To record each bin's visit freq & times
 	unordered_map<int, int> freq_map;
@@ -1574,7 +1574,7 @@ bool SA::remove_random(Solution* sol)
 	return false;
 }
 
-bool SA::remove_random2(Solution* sol)
+bool VNS::remove_random2(Solution* sol)
 {
 	// To record each bin's visit freq & times
 	unordered_map<int, int> freq_map;
@@ -1689,7 +1689,7 @@ bool SA::remove_random2(Solution* sol)
 	
 }
 
-bool SA::insert_random(Solution* sol)
+bool VNS::insert_random(Solution* sol)
 {
 	//cout << "Insert_random!!!" << endl;
 	vector<vector<double>> potential_list = {};
@@ -1779,7 +1779,7 @@ bool SA::insert_random(Solution* sol)
 	return false;
 }
 
-bool SA::insert_random2(Solution* sol)
+bool VNS::insert_random2(Solution* sol)
 {
 	//cout << "Insert_random!!!" << endl;
 	vector<vector<double>> potential_list = {};
@@ -1881,7 +1881,7 @@ bool SA::insert_random2(Solution* sol)
 	
 }
 
-bool SA::two_opt_intra(Solution* sol) {
+bool VNS::two_opt_intra(Solution* sol) {
 	for (int r = 0; r < data.numTruck; r++) {
 		// telusuri per-trip (hindari depot 0)
 		int s = 1;
@@ -1917,7 +1917,7 @@ bool SA::two_opt_intra(Solution* sol) {
 	return false;
 }
 
-bool SA::two_opt_intra2(Solution* sol)
+bool VNS::two_opt_intra2(Solution* sol)
 {
 	// Loop through each route (r_index)
 	for (int r_index = 0; r_index < data.numTruck; r_index++)
@@ -1979,7 +1979,7 @@ bool SA::two_opt_intra2(Solution* sol)
 	return false;
 }
 
-bool SA::three_opt_intra(Solution* sol)
+bool VNS::three_opt_intra(Solution* sol)
 {
 	//cout << "three_opt_intra" << endl;
 	auto revcat = [](const std::vector<std::pair<int, int>>& v) {
@@ -2098,7 +2098,7 @@ bool SA::three_opt_intra(Solution* sol)
 	return false;
 }
 
-bool SA::swap22_intra_random(Solution* sol)
+bool VNS::swap22_intra_random(Solution* sol)
 {
 	int r = std::rand() % data.numTruck;
 
@@ -2134,7 +2134,7 @@ bool SA::swap22_intra_random(Solution* sol)
 	return false;
 }
 
-bool SA::swap22_inter_random(Solution* sol) 
+bool VNS::swap22_inter_random(Solution* sol) 
 {
 	int r1 = std::rand() % data.numTruck;
 	int r2 = std::rand() % data.numTruck;
@@ -2178,7 +2178,7 @@ bool SA::swap22_inter_random(Solution* sol)
 	return false;
 }
 
-bool SA::shift20_intra_random(Solution* sol)
+bool VNS::shift20_intra_random(Solution* sol)
 {
 	int r = std::rand() % data.numTruck;
 
@@ -2222,7 +2222,7 @@ bool SA::shift20_intra_random(Solution* sol)
 	return false;
 }
 
-bool SA::shift20_inter_random(Solution* sol)
+bool VNS::shift20_inter_random(Solution* sol)
  {
 	int r1 = std::rand() % data.numTruck;
 	int r2 = std::rand() % data.numTruck;
@@ -2270,7 +2270,7 @@ bool SA::shift20_inter_random(Solution* sol)
 	return false;
 }
 
-bool SA::swap22_intra_fi(Solution* sol)
+bool VNS::swap22_intra_fi(Solution* sol)
 {
 	for (int r = 0; r < data.numTruck; r++) {
 		// telusuri tiap trip pada rute r
@@ -2312,7 +2312,7 @@ bool SA::swap22_intra_fi(Solution* sol)
 	return false;
 }
 
-bool SA::swap22_inter_fi(Solution* sol)
+bool VNS::swap22_inter_fi(Solution* sol)
 {
 	for (int r1 = 0; r1 < data.numTruck; ++r1) {
 		// daftar trip di r1
@@ -2381,7 +2381,7 @@ bool SA::swap22_inter_fi(Solution* sol)
 	return false;
 }
 
-bool SA::shift20_intra_fi(Solution* sol)
+bool VNS::shift20_intra_fi(Solution* sol)
 {
 	for (int r = 0; r < data.numTruck; ++r) {
 		int s = 1;
@@ -2430,7 +2430,7 @@ bool SA::shift20_intra_fi(Solution* sol)
 	return false;
 }
 
-bool SA::shift20_inter_fi(Solution* sol)
+bool VNS::shift20_inter_fi(Solution* sol)
 {
 	for (int r1 = 0; r1 < data.numTruck; ++r1) 
 	{
@@ -2513,7 +2513,7 @@ bool SA::shift20_inter_fi(Solution* sol)
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 /*
-bool SA::relocation_heuristic(Solution* sol)
+bool VNS::relocation_heuristic(Solution* sol)
 {
 	// Loop through each truck (route)
 	for (int r_index = 0; r_index < data.numTruck; r_index++)
@@ -2560,7 +2560,7 @@ bool SA::relocation_heuristic(Solution* sol)
 */
 
 /*
-bool SA::three_opt_intra(Solution* sol)
+bool VNS::three_opt_intra(Solution* sol)
 {
 	bool isImproved = false;
 
