@@ -140,8 +140,8 @@ public:
 	~Solution();
 };
 
-// ============================ SA ============================
-class SA
+// ============================ VNS ============================
+class VNS
 {
 public:
 	DataProb& data;
@@ -261,7 +261,7 @@ public:
 	bool shift20_intra_fi(Solution* sol);
 	bool shift20_inter_fi(Solution* sol);
 
-	void freeSA();
-	SA(DataProb& data, MasterProblem& master);
-	~SA();
+	void freeVNS();
+	VNS(DataProb& data, MasterProblem& master);
+	~VNS();
 };
